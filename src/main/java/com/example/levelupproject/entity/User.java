@@ -19,7 +19,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // null 넣으면 DB가 알아서 autoincrement해준다.
     private Long id;
 
+    @Column(nullable = true)
+    private String userId;
 
+    @Column(nullable = true)
+    private String password;
 
+    @Column(nullable = true)
+    private String name;
+
+    @Column(nullable = true)
+    private String email;
 
 }
