@@ -23,4 +23,9 @@ public class SwaggerController {
         return ResponseEntity.ok("hello " + name);
     }
 
+    @GetMapping("/fuck")
+    public ResponseEntity<String> hellofuck(@Parameter(description = "이름", required = true, example = "Park") @RequestParam String name) {
+        return ResponseEntity.ok("hello " + name);
+    }
+
 }

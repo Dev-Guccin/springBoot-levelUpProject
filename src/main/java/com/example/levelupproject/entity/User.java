@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table
 @Getter
 @Builder
 @NoArgsConstructor // 기본 생성자 추가
 @AllArgsConstructor // final이 붙은 변수 전부 생성자 등록
+@Table(name="tb_user")
 public class User {
 
     @Id
@@ -20,7 +20,7 @@ public class User {
     private Long id;
 
     @Column(nullable = true)
-    private String userId;
+    private String userId;// 대문자로 되면 알아서 user_id를 찾는다.
 
     @Column(nullable = true)
     private String password;
@@ -31,4 +31,6 @@ public class User {
     @Column(nullable = true)
     private String email;
 
+    @Column(nullable = true)
+    private String createdTime;
 }
